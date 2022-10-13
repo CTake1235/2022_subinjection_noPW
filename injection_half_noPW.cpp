@@ -22,8 +22,7 @@ int main(){
         if(res == 1){
             switch(int(data)){
                 case 9://maru,inject
-                    inside.move_p1(0.02,shotpower);
-                    outside.move_p1(0.02,shotpower);
+                    state = 1;
                     break;
                 case 10://sikaku,reload back
                     inside_reload.move_p2(0.02,reloadpower);
@@ -34,23 +33,21 @@ int main(){
                     outside_reload.move_p1(0.02,reloadpower);
                     break;
                 case 12://batu,stop
-                    state = false;
+                    state = 0;
                     break;
                 default:
-                    inside.stop();
-                    outside.stop();
                     inside_reload.stop();
                     outside_reload.stop();
                     break;
             }
-            /*if(state == true){//for injection
+            if(state == 1){//for injection
                 inside.move_p1(0.02,shotpower);
                 outside.move_p1(0.02,shotpower);
             }
             else{
                 inside.stop();
                 outside.stop();
-            }*/
+            }
         }
         else{
             inside.stop();
