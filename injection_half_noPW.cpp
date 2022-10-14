@@ -33,6 +33,8 @@ int main(){
                     outside_reload.move_p1(0.02,reloadpower);
                     break;
                 case 12://batu,stop
+                    inside.stop();
+                    outside.stop();
                     state = 0;
                     break;
                 default:
