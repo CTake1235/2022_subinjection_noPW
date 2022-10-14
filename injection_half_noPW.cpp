@@ -33,22 +33,20 @@ int main(){
                     outside_reload.move_p1(0.02,reloadpower);
                     break;
                 case 12://batu,stop
-                    inside.stop();
-                    outside.stop();
                     state = 0;
                     break;
                 default:
                     inside_reload.stop();
                     outside_reload.stop();
+                    if(state == 1){
+                    inside.move_p1(0.02, shotpower);
+                    outside.move_p1(0.02, shotpower);
+                    }
+                    else{
+                        inside.stop();
+                        outside.stop();
+                    }
                     break;
-            }
-            if(state == 1){//for injection
-                inside.move_p1(0.02,shotpower);
-                outside.move_p1(0.02,shotpower);
-            }
-            else{
-                inside.stop();
-                outside.stop();
             }
         }
         else{
