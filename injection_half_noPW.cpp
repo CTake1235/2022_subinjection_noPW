@@ -15,7 +15,7 @@ int main(){
     clock_t start,end; 
     static char data;
     double shotpower = 0.9;
-    double reloadpower = 0.5;
+    double reloadpower = 0.7;
     bool state = 0;
     while(true){
         res = raspi.read(&data,4);
