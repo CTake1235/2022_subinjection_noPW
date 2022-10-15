@@ -4,10 +4,10 @@
 
 UnbufferedSerial raspi         (PA_0,PA_1,9600);
 
-sonMD            inside        (PA_8,PB_10,0.00015);
+sonMD            inside        (PB_10,PA_8,0.00015);
 sonMD            outside       (PA_9,PC_7,0.00015);
-sonMD            inside_reload (PB_6,PB_9,0.00015);
-sonMD            outside_reload(PC_9,PB_8,0.00015);
+sonMD            inside_reload (PB_9,PB_6,0.00015);
+sonMD            outside_reload(PB_8,PC_9,0.00015);
 
 int main(){
     raspi.format(8,BufferedSerial::None,1);
@@ -24,11 +24,11 @@ int main(){
                 case 9://maru,inject
                     state = 1;
                     break;
-                case 10://sikaku,reload back
+                case 10://sikaku,reload go
                     inside_reload.move_p2(0.02,reloadpower);
                     outside_reload.move_p2(0.02,reloadpower);
                     break;
-                case 11://sankaku,reload go
+                case 11://sankaku,reload back
                     inside_reload.move_p1(0.02,reloadpower);
                     outside_reload.move_p1(0.02,reloadpower);
                     break;
