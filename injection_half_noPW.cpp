@@ -1,6 +1,5 @@
 #include "mbed.h"
 #include "sonMD.h"
-#include "time.h"
 
 UnbufferedSerial raspi         (PA_0,PA_1,9600);
 
@@ -11,10 +10,9 @@ sonMD            outside_reload(PB_8,PC_9,0.00015);
 
 int main(){
     raspi.format(8,BufferedSerial::None,1);
-    int res,time;
-    clock_t start,end; 
+    int res,time; 
     static char data;
-    double shotpower = 0.9;
+    double shotpower = 0.6;
     double reloadpower = 0.7;
     bool state = 0;
     while(true){
